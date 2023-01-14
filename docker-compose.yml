@@ -65,19 +65,26 @@ services:
       - "3008:3008"
     
 
-  jenkins:
-    image: jenkins/jenkins:lts
-    ports:
-    - "8080:8080"
-    - "50000:50000"
-    volumes:
-    - jenkins_data:/var/jenkins_home
-    - /var/run/docker.sock:/var/run/docker.sock
+  #jenkins:
+  #  image: jenkins/jenkins:lts
+  #  ports:
+  #  - "8080:8080"
+  #  - "50000:50000"
+  #  volumes:
+  #  - jenkins_data:/var/jenkins_home
+  #  - /var/run/docker.sock:/var/run/docker.sock
+  #  environment:
+  #  - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+  #  restart: always
+#volumes:
+#  jenkins_data:
+
+  echo-server:
+    image: ealen/echo-server:latest
     environment:
-    - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
-    restart: always
-volumes:
-  jenkins_data:
+      - ENABLE__ENVIRONMENT=false
+    ports:
+      - 3000:80
   #nginx:
   #  depends_on:
   #    - backend
