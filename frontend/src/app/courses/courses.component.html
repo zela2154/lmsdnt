@@ -1,0 +1,393 @@
+<app-header></app-header>
+<section>
+    <ul class="lms-cours-head">
+        <li>
+            <a style="cursor: pointer; color: blue;" [routerLink]="['/']">
+                <i class="fas fa-home"></i>
+            </a>
+        </li>
+        <li>
+           <a href="">/ Cours</a>
+        </li>
+        <li> / Toutes les Catégories </li>
+    </ul>
+</section>
+<section class="lms-cours-sub-header">
+   <div class="lms-cours-sub-head">
+      <span>Affichage sur cette page : 6</span>
+      <div>
+        <a href="">
+          <i class="fas fa-sync-alt"></i>
+        </a>
+        <a href="">
+          <i class="fas fa-th-list"></i>
+        </a>
+        <a href="">
+          <i class="fas fa-th"></i>
+        </a>
+      </div>
+   </div>
+</section>
+<section class="lms-cours-container">
+  <div class="lms-cours-container-left">
+    <div class="lms-cours-container-left-1" (click)="showLeft1=!showLeft1">
+       <span>Filtre</span>
+       <i class="fas fa-sliders-h"></i>
+    </div>
+    <div class="lms-cours-container-left-2" *ngIf="showLeft1">
+      <div class="lms-cours-container-left-2-1">
+        <span>Catégories</span>
+        <div>
+          <input type="radio" id="all-courses" name="category" value="all-courses" checked>
+          <label for="all-courses">Toutes les catégories</label>
+        </div>
+        <div>
+          <input type="radio" id="informatique" name="category" value="informatique">
+          <label for="informatique">Informatique</label>
+        </div>
+        <div>
+          <input type="radio" id="science" name="category" value="science">
+          <label for="science">Sciences</label>
+        </div>
+        <div>
+          <input type="radio" id="litterature" name="category" value="litterature">
+          <label for="litterature">Littérature</label>
+        </div>
+      </div>
+      <div class="lms-cours-container-left-2-2">
+        <span>Prix</span>
+        <div>
+          <input type="radio" id="tout" name="prix" value="tout" checked>
+          <label for="tout">Tout</label>
+        </div>
+        <div>
+          <input type="radio" id="gratuit" name="prix" value="gratuit">
+          <label for="gratuit">Gratuit</label>
+        </div>
+        <div>
+          <input type="radio" id="payant" name="prix" value="payant">
+          <label for="payant">Payant</label>
+        </div>
+      </div>
+      <div class="lms-cours-container-left-2-3">
+        <span>Niveau</span>
+         <div>
+          <input type="radio" id="tout1" name="niveau" value="tout" checked>
+          <label for="tout1">Tout</label>
+        </div>
+        <div>
+          <input type="radio" id="debutant" name="niveau" value="adebutant">
+          <label for="debutant">Débutant</label>
+        </div>
+        <div>
+          <input type="radio" id="intermediaire" name="niveau" value="intermediaire">
+          <label for="intermediaire">Intermédiaire</label>
+        </div>
+        <div>
+          <input type="radio" id="avance" name="niveau" value="avance">
+          <label for="avance">Avancé</label>
+        </div>
+      </div>
+      <div class="lms-cours-container-left-2-4">
+        <span>Langues</span>
+        <div>
+          <input type="radio" id="tout1" name="language" value="all-language" checked>
+          <label for="all-language">Tout</label>
+        </div>
+        <div>
+          <input type="radio" id="francais" name="language" value="francais">
+          <label for="francais">Français</label>
+        </div>
+        <div>
+          <input type="radio" id="anglais" name="language" value="anglais">
+          <label for="anglais">Anglais</label>
+        </div>
+        <div>
+          <input type="radio" id="wolof" name="language" value="wolof">
+          <label for="wolof">Wolof</label>
+        </div>
+      </div>
+      <div class="lms-cours-container-left-2-5">
+        <span>Notes</span>
+        <div>
+          <input type="radio" id="all-rating" name="rating" value="all-rating" checked>
+          <label for="all-rating">Toutes</label>
+        </div>
+        <div>
+          <input type="radio" id="rating_1" name="rating" value="1">
+          <label for="rating_1">
+            <i class="fas fa-star" style="color: #f4c150;"></i>
+            <i class="fas fa-star" style="color: #dedfe0;"></i>
+            <i class="fas fa-star" style="color: #dedfe0;"></i>
+            <i class="fas fa-star" style="color: #dedfe0;"></i>
+            <i class="fas fa-star" style="color: #dedfe0;"></i>
+          </label>
+        </div>
+        <div>
+          <input type="radio" id="rating_2" name="rating" value="2">
+          <label for="rating_2">
+            <i class="fas fa-star" style="color: #f4c150;"></i>
+            <i class="fas fa-star" style="color: #f4c150;"></i>
+            <i class="fas fa-star" style="color: #dedfe0;"></i>
+            <i class="fas fa-star" style="color: #dedfe0;"></i>
+            <i class="fas fa-star" style="color: #dedfe0;"></i>
+          </label>
+        </div>
+        <div>
+          <input type="radio" id="rating_3" name="rating" value="3">
+          <label for="rating_3">
+            <i class="fas fa-star" style="color: #f4c150;"></i>
+            <i class="fas fa-star" style="color: #f4c150;"></i>
+            <i class="fas fa-star" style="color: #f4c150;"></i>
+            <i class="fas fa-star" style="color: #dedfe0;"></i>
+            <i class="fas fa-star" style="color: #dedfe0;"></i>
+          </label>
+        </div>
+        <div>
+          <input type="radio" id="rating_4" name="rating" value="4">
+          <label for="rating_4">
+            <i class="fas fa-star" style="color: #f4c150;"></i>
+            <i class="fas fa-star" style="color: #f4c150;"></i>
+            <i class="fas fa-star" style="color: #f4c150;"></i>
+            <i class="fas fa-star" style="color: #f4c150;"></i>
+            <i class="fas fa-star" style="color: #dedfe0;"></i>
+          </label>
+        </div>
+        <div>
+          <input type="radio" id="rating_5" name="rating" value="5">
+          <label for="rating_5">
+            <i class="fas fa-star" style="color: #f4c150;"></i>
+            <i class="fas fa-star" style="color: #f4c150;"></i>
+            <i class="fas fa-star" style="color: #f4c150;"></i>
+            <i class="fas fa-star" style="color: #f4c150;"></i>
+            <i class="fas fa-star" style="color: #f4c150;"></i>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="lms-cours-container-right">
+   <ul>
+      <li>
+        <a href="" class="lms-cours-container-right-img"><img src="../../assets/profile.jpg" alt=""></a>
+        <div class="lms-cours-container-right-sub">
+          <a href="">Développement Informatique</a>
+          <span class="lms-cours-container-right-name">Ousmane Diouf -</span>
+          <div class="lms-cours-container-right-title">The Best Of Coursessssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</div>
+          <div class="lms-cours-container-right-content-infos">
+            <div class="lms-cours-container-right-content">
+             <span>
+              <i class="fas fa-play-circle"></i>
+              2 leçons
+             </span>
+             <span>
+              <i class="far fa-clock"></i>
+              00:00:00 heures
+             </span>
+             <span>
+              <i class="fas fa-closed-captioning"></i>
+              Français
+             </span>
+             <span class="lms-cours-container-right-content-level">Débutant</span>
+            </div>
+            <div>
+              <div class="lms-cours-container-right-content-price">
+                <span>150€</span>
+                <span>300€</span>
+              </div>
+              <div>
+                <span class="lms-cours-container-right-content-rating">
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  0
+                </span>
+                <span class="lms-cours-container-right-content-note">0 Notes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="" class="lms-cours-container-right-img"><img src="../../assets/profile.jpg" alt=""></a>
+        <div class="lms-cours-container-right-sub">
+          <a href="">Développement Informatique</a>
+          <span class="lms-cours-container-right-name">Ousmane Diouf -</span>
+          <div class="lms-cours-container-right-title">The Best Of Coursessssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</div>
+          <div class="lms-cours-container-right-content-infos">
+            <div class="lms-cours-container-right-content">
+             <span>
+              <i class="fas fa-play-circle"></i>
+              2 leçons
+             </span>
+             <span>
+              <i class="far fa-clock"></i>
+              00:00:00 heures
+             </span>
+             <span>
+              <i class="fas fa-closed-captioning"></i>
+              Français
+             </span>
+             <span class="lms-cours-container-right-content-level">Débutant</span>
+            </div>
+            <div>
+              <div class="lms-cours-container-right-content-price">
+                <span>150€</span>
+                <span>300€</span>
+              </div>
+              <div>
+                <span class="lms-cours-container-right-content-rating">
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  0
+                </span>
+                <span class="lms-cours-container-right-content-note">0 Notes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="" class="lms-cours-container-right-img"><img src="../../assets/profile.jpg" alt=""></a>
+        <div class="lms-cours-container-right-sub">
+          <a href="">Développement Informatique</a>
+          <span class="lms-cours-container-right-name">Ousmane Diouf -</span>
+          <div class="lms-cours-container-right-title">The Best Of Coursessssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</div>
+          <div class="lms-cours-container-right-content-infos">
+            <div class="lms-cours-container-right-content">
+             <span>
+              <i class="fas fa-play-circle"></i>
+              2 leçons
+             </span>
+             <span>
+              <i class="far fa-clock"></i>
+              00:00:00 heures
+             </span>
+             <span>
+              <i class="fas fa-closed-captioning"></i>
+              Français
+             </span>
+             <span class="lms-cours-container-right-content-level">Débutant</span>
+            </div>
+            <div>
+              <div class="lms-cours-container-right-content-price">
+                <span>150€</span>
+                <span>300€</span>
+              </div>
+              <div>
+                <span class="lms-cours-container-right-content-rating">
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  0
+                </span>
+                <span class="lms-cours-container-right-content-note">0 Notes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="" class="lms-cours-container-right-img"><img src="../../assets/profile.jpg" alt=""></a>
+        <div class="lms-cours-container-right-sub">
+          <a href="">Développement Informatique</a>
+          <span class="lms-cours-container-right-name">Ousmane Diouf -</span>
+          <div class="lms-cours-container-right-title">The Best Of Coursessssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</div>
+          <div class="lms-cours-container-right-content-infos">
+            <div class="lms-cours-container-right-content">
+             <span>
+              <i class="fas fa-play-circle"></i>
+              2 leçons
+             </span>
+             <span>
+              <i class="far fa-clock"></i>
+              00:00:00 heures
+             </span>
+             <span>
+              <i class="fas fa-closed-captioning"></i>
+              Français
+             </span>
+             <span class="lms-cours-container-right-content-level">Débutant</span>
+            </div>
+            <div>
+              <div class="lms-cours-container-right-content-price">
+                <span>150€</span>
+                <span>300€</span>
+              </div>
+              <div>
+                <span class="lms-cours-container-right-content-rating">
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  0
+                </span>
+                <span class="lms-cours-container-right-content-note">0 Notes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <a href="" class="lms-cours-container-right-img"><img src="../../assets/profile.jpg" alt=""></a>
+        <div class="lms-cours-container-right-sub">
+          <a href="">Développement Informatique</a>
+          <span class="lms-cours-container-right-name">Ousmane Diouf -</span>
+          <div class="lms-cours-container-right-title">The Best Of Coursessssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</div>
+          <div class="lms-cours-container-right-content-infos">
+            <div class="lms-cours-container-right-content">
+             <span>
+              <i class="fas fa-play-circle"></i>
+              2 leçons
+             </span>
+             <span>
+              <i class="far fa-clock"></i>
+              00:00:00 heures
+             </span>
+             <span>
+              <i class="fas fa-closed-captioning"></i>
+              Français
+             </span>
+             <span class="lms-cours-container-right-content-level">Débutant</span>
+            </div>
+            <div>
+              <div class="lms-cours-container-right-content-price">
+                <span>150€</span>
+                <span>300€</span>
+              </div>
+              <div>
+                <span class="lms-cours-container-right-content-rating">
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  <i class="fas fa-star" style="color: #dedfe0;"></i>
+                  0
+                </span>
+                <span class="lms-cours-container-right-content-note">0 Notes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="lms-cours-container-right-pagination">
+     <a href=""><img src="../../assets/prev_arrow.png" alt=""></a>
+     <a href="" class="lms-cours-container-right-pagination-active">1</a>
+     <a href="">2</a>
+     <a href="">3</a>
+     <a href="">4</a>
+     <a href="">5</a>
+     <a href=""><img src="../../assets/next_arrow.png" alt=""></a>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

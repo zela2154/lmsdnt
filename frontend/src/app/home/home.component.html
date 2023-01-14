@@ -1,0 +1,214 @@
+<app-header></app-header>
+<section class="lms-home">
+    <h1>Apprenez selon votre <br> emploi du temps</h1>
+    <p>Étudiez n'importe quel sujet, n'importe quand. Explorez <br> des milliers de cours au prix le plus bas de tous les temps !</p>
+    <div class="lms-home-search">
+        <form action="">
+            <input type="text" placeholder="Que voulez-vous apprendre ?">
+            <button type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+    </div>
+</section>
+<section class="lms-home-fact">
+    <div class="lms-home-fact-div">
+     <i class="fas fa-bullseye float-left"></i>
+     <div>
+        <span>4 cours en ligne</span>
+        <span>Explorez une variété de sujets frais</span>
+     </div>
+    </div>
+    <div class="lms-home-fact-div">
+        <i class="fa fa-check float-left"></i>
+        <div>
+            <span>Instructions d'experts</span>
+            <span>Trouvez le bon cours pour vous</span>
+        </div>
+        </div>
+    <div class="lms-home-fact-div">
+       <i class="fa fa-clock float-left"></i>
+        <div>
+            <span>Accès à vie</span>
+            <span>Apprenez à votre rythme</span>
+        </div>
+    </div>
+</section>
+<section class="lms-home-container">
+    <h5>Meilleurs cours</h5>
+    <div>
+    <!--<swiper #swiper [config]="config" class="lms-home-product">-->
+    <swiper #swiper [config]="config"  class="lms-home-product">
+           <ng-template swiperSlide class="lms-home-product-item" *ngFor="let course of courseList">
+                            <div class="lms-home-product-item-left">
+                                <a href="">
+                                    <img src="../../assets/wavingflags3.jpg" alt="">
+                                    <div style="padding: 0 10px">
+                                        <h6>{{ course.Course.title }}</h6>
+                                        <div class="lms-home-description">{{ course.Course.short_description }}</div>
+                                        <div class="lms-rating">
+                                            <i class="fas fa-star"
+                                                [ngStyle]="{'color': course.sum_rating >= 5 ? '#ffa900' : ''}"></i>
+                                            <i class="fas fa-star" [ngStyle]="{'color': course.sum_rating >= 1000 ? '#ffa900' : ''}"></i>
+                                            <i class="fas fa-star" [ngStyle]="{'color': course.sum_rating >= 2000 ? '#ffa900' : ''}"></i>
+                                            <i class="fas fa-star" [ngStyle]="{'color': course.sum_rating >= 4000 ? '#ffa900' : ''}"></i>
+                                            <i class="fas fa-star" [ngStyle]="{'color': course.sum_rating >= 10000 ? '#ffa900' : ''}"></i>
+                                        </div>
+                                        <div class="lms-home-price">
+                                            <span>{{ course.Course.price }} €</span>
+                                            <span>{{ course.Course.discounted_price }} €</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="lms-home-product-item-right-fleche"></div>
+                            <div class="lms-home-product-item-right" style="z-index: 999999;">
+                                <span class="lms-last-update">Dernière mise à jour, Mardi 23 août 2022</span>
+                                <h6><a href="">Multumédia</a></h6>
+                                <div class="lms-sub-infos">
+                                    <span>
+                                        <i class="fas fa-play-circle"></i>
+                                        0 leçons
+                                    </span>
+                                    <span>
+                                        <i class="far fa-clock"></i>
+                                        00:00:00 heures
+                                    </span>
+                                    <span>
+                                        <i class="fas fa-closed-captioning"></i>
+                                        Français
+                                    </span>
+                                    <h6 class="lms-home-product-item-right-description">Apprendre le Multumédia</h6>
+                                    <ul class="lms-home-product-item-right-futur">
+                                        <li *ngFor="let requirement of course.Course.requirements">
+                                            <div>{{requirement}}</div>
+                                        </li>
+                                    </ul>
+                                    <div class="lms-home-product-item-right-btn">
+                                        <button class="lms-home-product-item-right-btn-cart">Ajouter au panier</button>
+                                        <button class="lms-home-product-item-right-btn-wishlist">
+                                            <i class="fas fa-heart"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+            </ng-template>
+    </swiper>
+    </div>
+</section>
+<section class="lms-home-container">
+    <h5>Top 10 des derniers cours</h5>
+    <swiper #swiper [config]="config" class="lms-home-product">
+        <!--<ng-template swiperSlide class="lms-home-product-item">
+    
+            <div class="lms-home-product-item-left">
+                <a href="">
+                    <img src="../../assets/wavingflags3.jpg" alt="">
+                    <div style="padding: 0 10px">
+                        <h6>Multumédia</h6>
+                        <div class="lms-home-description">Apprendre le Multumédia</div>
+                        <div class="lms-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="lms-home-price">
+                            <span>600 €</span>
+                            <span>300 €</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="lms-home-product-item-right-fleche"></div>
+            <div class="lms-home-product-item-right" style="z-index: 999999;">
+                <span class="lms-last-update">Dernière mise à jour, Mardi 23 août 2022</span>
+                <h6><a href="">Multumédia</a></h6>
+                <div class="lms-sub-infos">
+                    <span>
+                        <i class="fas fa-play-circle"></i>
+                        0 leçons
+                    </span>
+                    <span>
+                        <i class="far fa-clock"></i>
+                        00:00:00 heures
+                    </span>
+                    <span>
+                        <i class="fas fa-closed-captioning"></i>
+                        Français
+                    </span>
+                    <h6 class="lms-home-product-item-right-description">Apprendre le Multumédia</h6>
+                    <ul class="lms-home-product-item-right-futur">
+                        <li>
+                            <div>Devenir développeur Full-Stackkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</div>
+                        </li>
+                        <li>
+                            <div>Devenir développeur Full-Stackkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</div>
+                        </li>
+                    </ul>
+                    <div class="lms-home-product-item-right-btn">
+                        <button class="lms-home-product-item-right-btn-cart">Ajouter au panier</button>
+                        <button class="lms-home-product-item-right-btn-wishlist">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </ng-template>-->
+    <ng-template swiperSlide class="lms-home-product-item" *ngFor="let course of courseList1">
+        <div class="lms-home-product-item-left">
+            <a href="">
+                <img src="../../assets/wavingflags3.jpg" alt="">
+                <div style="padding: 0 10px">
+                    <h6>{{ course.title }}</h6>
+                    <div class="lms-home-description">{{ course.short_description }}</div>
+                    <div class="lms-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="lms-home-price">
+                        <span>{{ course.price }} €</span>
+                        <span>{{ course.discounted_price }} €</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="lms-home-product-item-right-fleche"></div>
+        <div class="lms-home-product-item-right" style="z-index: 9999991;">
+            <span class="lms-last-update">Dernière mise à jour, Mardi 23 août 2022</span>
+            <h6><a href="">Multumédia</a></h6>
+            <div class="lms-sub-infos">
+                <span>
+                    <i class="fas fa-play-circle"></i>
+                    0 leçons
+                </span>
+                <span>
+                    <i class="far fa-clock"></i>
+                    00:00:00 heures
+                </span>
+                <span>
+                    <i class="fas fa-closed-captioning"></i>
+                    Français
+                </span>
+                <h6 class="lms-home-product-item-right-description">Apprendre le Multumédia</h6>
+                <ul class="lms-home-product-item-right-futur">
+                    <li *ngFor="let requirement of course.requirements">
+                        <div>{{requirement}}</div>
+                    </li>
+                </ul>
+                <div class="lms-home-product-item-right-btn">
+                    <button class="lms-home-product-item-right-btn-cart">Ajouter au panier</button>
+                    <button class="lms-home-product-item-right-btn-wishlist">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+    </swiper>
+</section>
+<app-footer></app-footer>

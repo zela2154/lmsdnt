@@ -1,0 +1,60 @@
+<app-header></app-header>
+<div style="background: #f8f9fa;">
+    <section class="lms-login-header">
+    <div class="lms-login-head">
+        <a style="cursor: pointer;color: blue;" [routerLink]="['/']"><i class="fas fa-home"></i></a>
+        <span class="lms-login-head-s">/</span>
+        <span>Inscription</span>
+    </div>
+    <h4>Inscrivez-vous</h4>
+</section>
+<section class="lms-login-containering">
+    <div class="lms-login-container">
+        <div class="lms-login-container-1">
+            <h4>Formulaire d'inscription</h4>
+            <span>Inscrivez-vous et commencez à apprendre.</span>
+        </div>
+        <form action="">
+            <div class="lms-login-container-2">
+                <div class="lms-login-container-2-email">
+                        <label for="sign-up-first">
+                            <i class="fas fa-user"></i>
+                            <span>Prénom:</span>
+                        </label>
+                        <input type="text" id="sign-up-first" placeholder="Prénom...">
+                </div>
+                <div class="lms-login-container-2-pass">
+                        <label for="sign-up-name">
+                            <i class="fas fa-user"></i>
+                            <span>Nom:</span>
+                        </label>
+                        <input type="text" id="sign-up-name" placeholder="Nom...">
+                </div>
+                <div class="lms-login-container-2-email">
+                        <label for="login-email">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email:</span>
+                        </label>
+                        <input type="text" id="login-email" placeholder="Email...">
+                </div>
+                <div class="lms-login-container-2-pass">
+                        <label for="login-pass">
+                            <i class="fas fa-lock"></i>
+                            <span>Password:</span>
+                        </label>
+                        <input type="password" id="login-pass" placeholder="Password...">
+                </div>
+            </div>
+            <div class="lms-login-container-3">
+              <button type="submit">S'inscrire</button>
+              <span>
+                Vous avez déjà un compte ?
+                <a style="cursor: pointer;color: blue;" [routerLink]="['/lms-dnt/auth/login']">Connexion</a> 
+              </span>
+            </div>
+        </form>
+    </div>
+</section>
+</div>
+<!--<apx-chart [series]="series" [chart]="chart" [title]="title"></apx-chart>-->
+<app-footer></app-footer>

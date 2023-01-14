@@ -1,0 +1,264 @@
+.lms-cours-head{
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 0;
+    color: #fff;
+    background-color: #29303b;
+    font-size: 15px;
+}
+.lms-cours-head li{
+    margin-left: 10px;
+}
+.lms-cours-head li a{
+    color: #fff;
+}
+.lms-cours-head li a:hover{
+    color: #a1a7b3;
+    transition: cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.lms-cours-head li a i{
+    color: #a1a7b3;
+    font-size: 13px;
+}
+.lms-cours-sub-header{
+    padding: 0 10%;
+}
+.lms-cours-sub-head{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #29303b;
+    padding: 30px 0;
+}
+.lms-cours-sub-head a{
+    margin-right: 5px;
+    color: #007791;
+}
+.lms-cours-sub-head a i{
+    font-size: 22px;
+    font-weight: 900;
+}
+.lms-cours-sub-head a:hover{
+    color: #29303b;
+}
+.lms-cours-container{
+    display: flex;
+    padding: 20px 10%;
+}
+.lms-cours-container-left{
+    min-width: 25%;
+    height: fit-content;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+}
+.lms-cours-container-left-1{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, .03);
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    cursor: pointer;
+}
+.lms-cours-container-left-1 span{
+    font-size: 18px;
+}
+.lms-cours-container-left-2{
+    padding: 20px;
+    font-size: 14px;
+}
+.lms-cours-container-left-2-1,
+.lms-cours-container-left-2-2,
+.lms-cours-container-left-2-3,
+.lms-cours-container-left-2-4,
+.lms-cours-container-left-2-5{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+.lms-cours-container-left span{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 20px!important;
+    font-size: 14px;
+}
+.lms-cours-container-left input{
+    position: relative;
+    width: 18px;
+    height: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.lms-cours-container-left input:checked::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #eb5252;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+.lms-cours-container-left div{
+    margin-bottom: 10px;
+}
+.lms-cours-container-left label{
+    cursor: pointer;
+}
+.lms-cours-container-left-1 span{
+    margin-bottom: 0!important;
+}
+.lms-cours-container-left-2-5{
+    border-bottom: none;
+    margin-bottom: 0!important;
+}
+.lms-cours-container-left-2-5 i{
+    margin-right: 5px;
+}
+.lms-cours-container-right{
+    width: 70%;
+    margin-left: 5%;
+}
+.lms-cours-container-right ul{
+    width: 100%;
+    padding-left: 0;
+}
+.lms-cours-container-right ul li{
+    display: flex;
+    height: 210px;
+    width: 100%;
+    border: 1px solid #686f7a;
+    margin-bottom: 30px;
+}
+.lms-cours-container-right-sub{
+    padding: 10px 20px;
+    width: 70%;
+}
+.lms-cours-container-right-img{
+    width: 30%;
+}
+.lms-cours-container-right ul li img{
+    width: 100%;
+    height: 100%;
+    /*margin-right: 20px;*/
+}
+.lms-cours-container-right ul li a{
+    color: #29303b;
+    font-size: 16px;
+    font-weight: 600;
+}
+.lms-cours-container-right ul li a:hover{
+text-decoration: underline !important;
+}
+.lms-cours-container-right-name{
+    font-size: 13px;
+    display: block;
+    margin-top: 7px;
+}
+.lms-cours-container-right-title{
+    overflow: hidden!important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    color: #686f7a;
+    font-size: 16px;
+    margin-top: 10px;
+    width: 40%;
+    margin-bottom: 10px;
+}
+.lms-cours-container-right-content span{
+    font-size: 13px;
+    font-weight: 600;
+    color:#686f7a;
+    margin-right: 10px;
+}
+.lms-cours-container-right-content i{
+    opacity: 0.5;
+    margin-right: 10px;
+}
+.lms-cours-container-right-content-level{
+    display: block;
+    margin-top: 10px;
+}
+.lms-cours-container-right-content-infos{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.lms-cours-container-right-content-note{
+    display: block;
+    text-align: right;
+}
+.lms-cours-container-right-content-price{
+    text-align: right;
+    margin-bottom: 5px;
+}
+.lms-cours-container-right-content-price span:nth-child(1){
+    font-size: 20px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+.lms-cours-container-right-content-price span:nth-child(2){
+    text-decoration: line-through;
+}
+.lms-cours-container-right-content-rating i{
+    margin-right: 5px;
+}
+.lms-cours-container-right-pagination{
+    display: flex;
+    justify-content: center;
+}
+.lms-cours-container-right-pagination a{
+    display: block;
+    color: #007791;
+    padding: 10px 15px;
+    font-size: 17px;
+    position: relative;
+    /*margin-left: 1px;*/
+    line-height: 1.25;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+.lms-cours-container-right-pagination a:hover{
+    background-color: #dee2e6;
+    border: 1px solid #007791;
+}
+.lms-cours-container-right-pagination-active{
+ background-color: #007791!important;
+ color: #fff!important;
+ border: 1px solid #007791!important;
+}
+.lms-cours-container-right-pagination a:first-child{
+    border-radius: 5px 0 0 5px;
+}
+.lms-cours-container-right-pagination a:last-child {
+    border-radius:0 5px 5px 0;
+}
+@media only screen and (max-width: 950px){
+    .lms-cours-container{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .lms-cours-sub-header{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .lms-cours-container {
+        flex-direction: column;
+    }
+    .lms-cours-container-right{
+        width: 100%;
+        margin-left: 0;
+    }
+    .lms-cours-container-right ul li:nth-child(1){
+        margin-top: 20px;
+    }
+}

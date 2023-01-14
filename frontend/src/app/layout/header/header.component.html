@@ -1,0 +1,149 @@
+<section>
+    <nav class="lms-nav">
+        <div class="lms-logo">
+        <h3><a style="cursor: pointer; color: blue;" [routerLink]="['/']">DNT</a></h3>
+        </div>
+        <div class="lms-dropdown">
+        <div>
+            <i class="fas fa-th d-inline"></i>
+            <span>Courses</span>
+        </div>
+        <ul class="lms-dropdown-children">
+            <li>
+                <a href="">
+                    <i class="fab fa-accessible-icon"></i>
+                    Développement Informatique
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fab fa-accessible-icon"></i>
+                    Développement Informatique
+                </a>
+            </li>
+            <li class="lms-dropdown-all">
+                <a style="cursor: pointer;" [routerLink]="['/lms-dnt/courses']">
+                    <i class="fa fa-align-justify"></i>
+                    All Courses
+                </a>
+            </li>
+        </ul>
+        </div>
+        <div class="lms-search">
+        <form action="">
+            <input type="text" name="query" placeholder="Search for Courses">
+            <button>
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+        </div>
+        <div class="lms-buttons">
+            <div class="lms-cart">
+               <a href="">
+                   <i class="fas fa-shopping-cart"></i>
+                   <span>0</span>
+               </a>
+            </div>
+            <div class="lms-click">
+               <a style="cursor:pointer" (click)="gotoLogin()">Log In</a>
+               <a style="cursor:pointer" (click)="gotoSignup()">Sign Up</a>
+            </div>
+        </div>
+        <div>
+            
+        </div>
+    </nav>
+    <nav class="lms-mobile">
+     <div class="lms-mobile-grid">
+        <svg focusable="false" viewBox="0 0 24 24" (click)="showAside=true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
+        <img src="../../../assets/search.png" alt="" (click)="showSearch=true" *ngIf="showSearch===false">
+        <img src="../../../assets/x-regular-24.png" alt="" (click)="showSearch=false" *ngIf="showSearch===true">
+     </div>
+     <div class="lms-mobile-logo">
+      <h3><a style="cursor: pointer;color: blue;" [routerLink]="['/']">DNT</a></h3>
+     </div>
+     <div class="lms-mobile-cart">
+      <a href="">
+        <i class="fas fa-shopping-cart"></i>
+        <span>0</span>
+      </a>
+     </div>
+    </nav>
+    <div class="lms-mobile-search" id="lms-mobile-search" *ngIf="showSearch===true" @fadeIn @fadeOut>
+    <!--<div class="lms-mobile-search" id="lms-mobile-search"  [@fadeInOut]="showSearch ? 'open' : 'close'">-->
+          <div class="lms-search">
+            <form action="">
+                <input type="text" name="query" placeholder="Search for Courses">
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="lms-mobile-aside" *ngIf="showAside===true" @fadeInAside @fadeOutAside>
+    <!--<div class="lms-mobile-aside"  [@fadeInOut]="showAside ? 'open' : 'close'">-->
+        <div class="lms-mobile-aside1">
+            <div class="lms-mobile-aside-left" *ngIf="showAsideContaint===true">
+                <div class="lms-mobile-aside-left1"  (click)="showAsideContaint=false">
+                <span>Courses</span>
+                <i class="fa-solid fa-angle-right"></i>
+                </div>
+                <div class="lms-mobile-aside-left2">
+                    <a style="cursor:pointer" (click)="gotoSignup()">Sign Up</a>
+                    <a style="cursor:pointer" (click)="gotoLogin()">Log In</a>
+                </div>
+            </div>
+            <div class="lms-mobile-aside-right" *ngIf="showAsideContaint===false">
+                <div class="lms-mobile-aside-right1" (click)="showAsideContaint=true">
+                 <i class="fa-solid fa-angle-left"></i>
+                 <span>Menu</span>
+                </div>
+                <div class="lms-mobile-aside-right2">
+                   <ul>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-accessible-icon"></i>
+                            Développement Informatique
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-accessible-icon"></i>
+                            Développement Informatique
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-accessible-icon"></i>
+                            Développement Informatique
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-accessible-icon"></i>
+                            Développement Informatique
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-accessible-icon"></i>
+                            Développement Informatique
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-align-justify"></i>
+                            All Courses
+                        </a>
+                    </li>
+                   </ul>
+                </div>
+            </div>
+        </div>
+        <div class="lms-mobile-aside2" (click)="showAside=false">
+           
+        </div>
+    </div>
+</section>

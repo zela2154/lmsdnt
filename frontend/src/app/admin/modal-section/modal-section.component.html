@@ -1,0 +1,18 @@
+<div class="modal-header">
+    <h6 class="modal-title" id="exampleModalLabel">Ajouter une nouvelle section</h6>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modalRef.close()"></button>
+</div>
+<div class="modal-body">
+    
+        <div class="form-group">
+            <label for="section-name" class="col-form-label">Titre</label>
+            <input type="text" class="form-control" id="section-name">
+            <span style="font-size: 12px;">Indiquez un nom de section</span>
+        </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+        Close
+    </button>
+    <button type="button" class="btn btn-success">Ajouter une section</button>
+</div>

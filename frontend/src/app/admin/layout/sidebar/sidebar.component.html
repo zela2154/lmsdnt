@@ -1,0 +1,79 @@
+
+
+<section>
+    <div class="side-nav">
+      <div class="side-nav-head">
+       <img src="../../../../assets/profile.jpg" alt="">
+       <span>Ousmane Diouf</span>
+      </div>
+      <div class="side-nav-content">
+       <span class="side-nave-navigate">NAVIGUATION</span>
+       <ul>
+          <li><a style="cursor: pointer;" (click)="gotoDashbord()">
+            <i class="dripicons-view-apps"></i>
+            <span>Tableau de bord</span>
+          </a></li>
+          <li><a (click)="submenuActive1=!submenuActive1" style="cursor: pointer;">
+            <i class="dripicons-network-1"></i>
+            <span>Categories</span>
+            <i class="fa-solid fa-chevron-right" style="margin-left: 30px; font-size: 14px;" *ngIf="!submenuActive1"></i>
+            <i class="fa-solid fa-chevron-down" style="margin-left: 30px; font-size: 14px;" *ngIf="submenuActive1"></i>
+          </a>
+          <ul class="side-nav-dropdown" *ngIf="submenuActive1">
+            <li><a style="cursor: pointer;" (click)="gotoCategories()">Categories</a></li>
+            <li><a style="cursor: pointer;" (click)="gotoAddCategory()">Ajouter catégorie</a></li>
+          </ul>
+        </li>
+          <li><a style="cursor: pointer;" (click)="gotoCourses()">
+            <i class="dripicons-archive"></i>
+            <span>Cours</span>
+          </a></li>
+          <li><a style="cursor: pointer;" (click)="gotoStudents()">
+            <i class="dripicons-user-group"></i>
+            <span>Etudiants</span>
+          </a></li>
+          <li><a (click)="submenuActive2=!submenuActive2" style="cursor: pointer;">
+            <i class="dripicons-network-3"></i>
+            <span>Inscription</span>
+            <i class="fa-solid fa-chevron-right" style="margin-left: 30px; font-size: 14px;" *ngIf="!submenuActive2"></i>
+            <i class="fa-solid fa-chevron-down" style="margin-left: 30px; font-size: 14px;" *ngIf="submenuActive2"></i>
+          </a>
+            <ul class="side-nav-dropdown" *ngIf="submenuActive2">
+                <li><a style="cursor: pointer;" (click)="gotoHistory()">Historique</a></li>
+                <li><a style="cursor: pointer;" (click)="gotoStudentEnrole()">Inscrire étudiant</a></li>
+            </ul>
+        </li>
+          <li><a (click)="submenuActive3=!submenuActive3" style="cursor: pointer;">
+            <i class="dripicons-box"></i>
+            <span>Report</span>
+            <i class="fa-solid fa-chevron-right" style="margin-left: 55px; font-size: 14px;" *ngIf="!submenuActive3"></i>
+            <i class="fa-solid fa-chevron-down" style="margin-left: 55px; font-size: 14px;" *ngIf="submenuActive3"></i>
+          </a>
+            <ul class="side-nav-dropdown" *ngIf="submenuActive3">
+                <li><a style="cursor: pointer;" (click)="gotoAdminReport()">Revenue d'administration</a></li>
+                <li><a style="cursor: pointer;" (click)="gotoInstructorReport()">Revenue des instructeurs</a></li>
+            </ul>
+        </li>
+          <li><a style="cursor: pointer;" (click)="gotoMessages()">
+            <i class="dripicons-message"></i>
+            <span>Messages</span>
+          </a></li>
+          <li><a (click)="submenuActive4=!submenuActive4" style="cursor: pointer;">
+            <i class="dripicons-toggles"></i>
+            <span>Réglages</span>
+            <i class="fa-solid fa-chevron-right" style="margin-left: 35px; font-size: 14px;" *ngIf="!submenuActive4"></i>
+            <i class="fa-solid fa-chevron-down" style="margin-left: 35px; font-size: 14px;" *ngIf="submenuActive4"></i>
+          </a>
+            <ul class="side-nav-dropdown" *ngIf="submenuActive4">
+                <li><a style="cursor: pointer;" (click)="gotoSystemParameter()">Paramétres systéme</a></li>
+                <li><a style="cursor: pointer;" (click)="gotoWebParameter()">Paramétres site web</a></li>
+                <li><a style="cursor: pointer;" (click)="gotoPayementParameter()">Paramétres de paiement</a></li>
+                <li><a style="cursor: pointer;" (click)="gotoInstructorParameter()">Paramétres de l'instructeur</a></li>
+                <li><a style="cursor: pointer;" (click)="gotoLanguageParameter()">Paramétres de langue</a></li>
+                <li><a style="cursor: pointer;" (click)="gotoAboutUsParameter()">À propos de nous</a></li>
+            </ul>
+        </li>
+       </ul>
+      </div>
+    </div>
+</section>

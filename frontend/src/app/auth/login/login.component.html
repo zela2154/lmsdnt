@@ -1,0 +1,53 @@
+<app-header></app-header>
+<div style="background: #f8f9fa;">
+    <section class="lms-login-header">
+    <div class="lms-login-head">
+        <a style="cursor: pointer;color: blue;" [routerLink]="['/']"><i class="fas fa-home"></i></a>
+        <span class="lms-login-head-s">/</span>
+        <span>Login</span>
+    </div>
+    <h4>Connexion Utilisateur</h4>
+</section>
+<section class="lms-login-containering">
+    <div class="lms-login-container">
+        <div class="lms-login-container-1">
+            <h4>Connexion</h4>
+            <span>Fournissez vos identifiants de connexion valides.</span>
+        </div>
+        <form action=""  name="form" 
+        #f="ngForm"
+        (ngSubmit)="f.form.valid && onSubmit()">
+            <div class="lms-login-container-2">
+                <div class="lms-login-container-2-email">
+                        <label for="login-email">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email:</span>
+                        </label>
+                        <input type="text" name="email" id="login-email" [(ngModel)]="form.email" #email="ngModel" required placeholder="Email...">
+                </div>
+                <div class="lms-login-container-2-pass">
+                        <label for="login-pass">
+                            <i class="fas fa-lock"></i>
+                            <span>Password:</span>
+                        </label>
+                        <input type="password" name="password" id="login-pass" [(ngModel)]="form.password" #password="ngModel" required placeholder="Password...">
+                </div>
+                <div class="form_error" *ngIf="password.errors && f.submitted">
+                    <div *ngIf="password.errors['required']">Password is required</div>
+                    <div *ngIf="password.errors['minlength']">Password must be at least 5 charracters</div>
+                </div>
+                <div *ngIf="connected==false" style="color: red;margin-top: 20px;">Incorrect Password or Email</div>
+            </div>
+            <div class="lms-login-container-3">
+              <button type="submit">Connexion</button>
+              <span>ou <a href="">Password oublié</a></span>
+              <span>
+                Vous n'avez pas de compte ?
+                <a style="cursor: pointer;color: blue;" [routerLink]="['/lms-dnt/auth/signup']">S'inscrire</a> 
+              </span>
+            </div>
+        </form>
+    </div>
+</section>
+</div>
+<app-footer></app-footer>

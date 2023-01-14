@@ -1,0 +1,28 @@
+FROM node:18.12.1
+
+ENV TIME_ZONE=Europe/Paris
+
+RUN echo $TIME_ZONE | tee /etc/timezone \
+  && dpkg-reconfigure -f noninteractive tzdata
+
+  # Test de charge
+#WORKDIR /tmp
+
+#RUN git clone https://github.com/wg/wrk.git wrk
+#WORKDIR /tmp/wrk
+#RUN make && cp wrk /usr/local/bin  
+
+
+WORKDIR /usr/app
+COPY package*.json ./
+
+#Copie le rest du  code de notre application dans notre image
+COPY . .
+# Install global dependencies
+RUN yarn global add nodemon
+#COPY . .
+
+USER node
+
+
+

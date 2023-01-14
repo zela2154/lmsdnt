@@ -1,0 +1,85 @@
+.lms-login-header {
+    background-color: #29303b;
+    color: #fff;
+    padding: 40px 30px;
+    margin-bottom: 20px;
+}
+
+.lms-login-head {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.lms-login-head a {
+    margin-right: 10px;
+}
+
+.lms-login-head-s {
+    margin-right: 5px;
+}
+
+.lms-login-containering {
+    padding: 0 20% 50px 20%;
+}
+
+.lms-login-container {
+    border: 1px solid #b2b4b9;
+    background-color: #fff;
+}
+
+.lms-login-container-1,
+.lms-login-container-2 {
+    padding: 20px 0;
+    border-bottom: 1px solid #b2b4b9;
+    color: #b2b4b9;
+    text-align: center;
+}
+
+
+.lms-login-container-3 {
+    padding: 20px 0;
+    color: #b2b4b9;
+    text-align: center;
+}
+
+.lms-login-container-1 h4 {
+    color: #29303b;
+}
+
+.lms-login-container-2 label {
+    display: block;
+}
+
+.lms-login-container-2 input {
+    width: 50%;
+    height: 40px;
+    border: 1px solid #b2b4b9;
+    margin-top: 5px;
+    outline: none;
+}
+
+.lms-login-container-2 input:focus {
+    border-color: blue;
+}
+
+.lms-login-container-2-pass {
+    margin-top: 10px;
+}
+
+.lms-login-container-3 span {
+    display: block;
+}
+
+.lms-login-container-3 button {
+    margin-bottom: 20px;
+    border: none;
+    padding: 11px 12px;
+    background-color: #ec5252;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.lms-login-container-2 i{
+    margin-right: 10px;
+}

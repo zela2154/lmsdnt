@@ -1,0 +1,357 @@
+<section style="background-color: #fafbfe; height: 0vmax; padding-bottom: 20px;">
+    <app-head></app-head>
+    <div class="add-cours-content">
+         <app-sidebar></app-sidebar>
+         <div class="dashbord-content-1">
+            <div class="dashbord-content-head">
+                <div>
+                    <i class="mdi mdi-apple-keyboard-command title_icon"></i>
+                    <span>Ajouter un nouveau Cours</span>
+                </div>
+                <div>
+                    <a style="cursor: pointer;" (click)="gotoCourses()" class="dashbord-content-head-btn">
+                        <i class="mdi mdi-arrow-left-thin" style="vertical-align:middle"></i>
+                        Retour à la liste des cours
+                    </a>
+                </div>
+            </div>
+            <div class="add-cours-container">
+                <!--<ejs-tab cssClass="tab_content">
+                    <e-tabitems>
+                        <e-tabitem [header]="tabHeaderText[0]"></e-tabitem>
+                        <e-tabitem [header]="tabHeaderText[1]"></e-tabitem>
+                        <e-tabitem [header]="tabHeaderText[2]"></e-tabitem>
+                        <e-tabitem [header]="tabHeaderText[3]"></e-tabitem>
+                        <e-tabitem [header]="tabHeaderText[4]"></e-tabitem>
+                        <e-tabitem [header]="tabHeaderText[5]"></e-tabitem>
+                    </e-tabitems>
+                </ejs-tab>-->
+                <div class="add-cours-container-head">
+                  <ul>
+                    <li (click)="toggleBackground(0)" [class]="toggleColor ===0 ?'active-details' : ''" *ngIf="isEditCours">
+                        <i class="mdi mdi-account-circle mr-1"></i>
+                        <span>Curriculum</span>
+                    </li>
+                    <li (click)="toggleBackground(1)" [class]="toggleColor ===1 ?'active-details' : ''">
+                        <i class="mdi mdi-fountain-pen-tip mr-1"></i>
+                        <span>Basic</span>
+                    </li>
+                    <li (click)="toggleBackground(2)" [class]="toggleColor ===2 ?'active-details' : ''">
+                        <i class="mdi mdi-bell-alert mr-1"></i>
+                        <span>Conditions</span>
+                    </li>
+                    <li (click)="toggleBackground(3)" [class]="toggleColor ===3 ?'active-details' : ''">
+                        <i class="mdi mdi-camera-control mr-1"></i>
+                        <span>Résultats</span>
+                    </li>
+                    <li (click)="toggleBackground(4)" [class]="toggleColor ===4 ?'active-details' : ''">
+                        <i class="mdi mdi-currency-cny mr-1"></i>
+                        <span>Tarification</span>
+                    </li>
+                    <li (click)="toggleBackground(5)" [class]="toggleColor ===5 ?'active-details' : ''">
+                        <i class="mdi mdi-movie mr-1"></i>
+                        <span>Médias</span>
+                    </li>
+                    <li (click)="toggleBackground(6)" [class]="toggleColor ===6 ?'active-details' : ''">
+                        <i class="mdi mdi-checkbox-marked-circle-outline mr-1"></i>
+                        <span>Finir</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="add-cours-container-content">
+                      <div class="add-cours-container-content-curriculum" [class]="toggleColor ===0 ?'display-block' : 'display-none'">
+                        <ul>
+                            <li (click)="openModal()">
+                                <i class="mdi mdi-plus"></i>
+                                <span>Ajouter une section</span>
+                            </li>
+                            <li (click)="openModal1()">
+                                <i class="mdi mdi-plus"></i>
+                                <span>Ajouter une leçon</span>
+                            </li>
+                            <li (click)="openModal2()">
+                                <i class="mdi mdi-plus"></i>
+                                <span>Ajouter un questionnaire</span>
+                            </li>
+                        </ul>
+                        <div class="add-cours-container-content-curriculum-section">
+                            <div class="section-cours-head">
+                                <h6>Section 1: Site web</h6>
+                                <ul class="section-cours-head-hide">
+                                   <li>
+                                    <i class="mdi mdi-pencil-outline"></i>
+                                    Edit section
+                                   </li>
+                                   <li>
+                                    <i class="mdi mdi-window-close"></i>
+                                    Delete Section
+                                   </li>  
+                                </ul>
+                            </div>
+                            <div class="section-cours-lesson">
+                                    <div class="section-cours-lesson-lesson">
+                                        <div>
+                                            <i class='bx bxs-file-pdf'></i>
+                                            <span style="color:#6c757d">lesson 1: <strong>PHP</strong></span>
+                                        </div>
+                                        <div class="section-cours-hide">
+                                            <i class="mdi mdi-pencil-outline"  style="cursor: pointer;"></i>
+                                            <i class="mdi mdi-window-close" style="cursor: pointer;"></i>
+                                        </div>
+                                    </div>
+                                    <div class="section-cours-lesson-lesson">
+                                        <div>
+                                            <i class='bx bx-question-mark'></i>
+                                            <span style="color:#6c757d">Quiz 1: <strong>PHP</strong></span>
+                                        </div>
+                                        <div class="section-cours-hide">
+                                            <i class="mdi mdi-comment-question-outline" style="cursor: pointer;"></i>
+                                            <i class="mdi mdi-pencil-outline" style="cursor: pointer;"></i>
+                                            <i class="mdi mdi-window-close" style="cursor: pointer;"></i>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="add-cours-container-content-curriculum-section">
+                            <div class="section-cours-head">
+                                <h6>Section 1: Site web</h6>
+                                <ul class="section-cours-head-hide">
+                                    <li>
+                                        <i class="mdi mdi-pencil-outline"></i>
+                                        Edit section
+                                    </li>
+                                    <li>
+                                        <i class="mdi mdi-window-close"></i>
+                                        Delete Section
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="section-cours-lesson">
+                                <div class="section-cours-lesson-lesson">
+                                    <div>
+                                        <i class='bx bxs-file-pdf'></i>
+                                        <span style="color:#6c757d">lesson 1: <strong>PHP</strong></span>
+                                    </div>
+                                    <div class="section-cours-hide">
+                                        <i class="mdi mdi-pencil-outline" style="cursor: pointer;"></i>
+                                        <i class="mdi mdi-window-close" style="cursor: pointer;"></i>
+                                    </div>
+                                </div>
+                                <div class="section-cours-lesson-lesson">
+                                    <div>
+                                        <i class='bx bx-question-mark'></i>
+                                        <span style="color:#6c757d">Quiz 1: <strong>PHP</strong></span>
+                                    </div>
+                                    <div class="section-cours-hide">
+                                        <i class="mdi mdi-comment-question-outline" style="cursor: pointer;"></i>
+                                        <i class="mdi mdi-pencil-outline" style="cursor: pointer;"></i>
+                                        <i class="mdi mdi-window-close" style="cursor: pointer;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="add-cours-container-content-basic" [class]="toggleColor ===1 ?'display-block' : 'display-none'">
+                        <ul>
+                            <li>
+                                <label for="">Titre <span>*</span></label>
+                                <input style="width:100%;height: 40px;" type="text" placeholder="Entrez le titre du cours">
+                            </li>
+                            <li>
+                                <label for="">Petite description</label>
+                                <textarea style="width:100%" name="" id="" cols="30" rows="2"></textarea>
+                            </li>
+                            <li>
+                                <label for="">Description</label>
+                                <!--<tx-document-editor width="100%" height="500px"
+                                    webSocketURL="wss://backend.textcontrol.com?access-token=oJqPEXXZFuRTFesyPmwC">
+                                </tx-document-editor>-->
+                                <angular-editor [placeholder]="'Enter text here...'"></angular-editor>
+                            </li>
+                            <li>
+                                <label for="">Categorie <span>*</span></label>
+                                <div class="all-search-filter" style="position: relative;">
+                                    <div class="cours-search-wrapper">
+                                        <div class="cours-search-select-btn" (click)="listHidden=!listHidden; getFilteredList()"
+                                            (blur)="toggleListDisplay(0)">
+                                            <span style="color: #6c757d;" *ngIf="!inputItem">Choisissez une catégorie</span>
+                                            <span style="color: #6c757d;" *ngIf="inputItem">{{inputItem}}</span>
+                                            <i class="uil uil-angle-down"></i>
+                                        </div>
+                                        <div class="cours-search-content" *ngIf="!listHidden" style="position: absolute;">
+                                            <div class="cours-search">
+                                                <i class="uil uil-search"></i>
+                                                <input spellcheck="false" type="text" placeholder="Search" [(ngModel)]="inputItem"
+                                                    (ngModelChange)="getFilteredList()" (keyup)="onKeyPress($event)" (blur)="toggleListDisplay(0)"
+                                                    (focus)="toggleListDisplay(1)" [ngClass]="{'error': showError}">
+                                            </div>
+                                            <ul class="cours-search-options">
+                                                <span *ngIf="showError" class="error-text"><i>Invalid Selection.</i></span>
+                                                <list-item *ngFor="let item of filteredList;let i = index" [ngClass]="{'selected': i===selectedIndex}"
+                                                    (click)="selectItem(i)">{{item}}</list-item>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                             <li>
+                                <label for="">Niveau</label>
+                                <div class="all-search-filter" style="position: relative;">
+                                    <div class="cours-search-wrapper">
+                                        <div class="cours-search-select-btn" (click)="listHidden1=!listHidden1; getFilteredList1()"
+                                            (blur)="toggleListDisplay1(0)">
+                                            <span style="color: #6c757d;" *ngIf="!inputItem1">Débutant</span>
+                                            <span style="color: #6c757d;" *ngIf="inputItem1">{{inputItem1}}</span>
+                                            <i class="uil uil-angle-down"></i>
+                                        </div>
+                                        <div class="cours-search-content" *ngIf="!listHidden1" style="position: absolute;">
+                                            <div class="cours-search">
+                                                <i class="uil uil-search"></i>
+                                                <input spellcheck="false" type="text" placeholder="Search" [(ngModel)]="inputItem1"
+                                                    (ngModelChange)="getFilteredList1()" (keyup)="onKeyPress1($event)" (blur)="toggleListDisplay1(0)"
+                                                    (focus)="toggleListDisplay1(1)" [ngClass]="{'error': showError1}">
+                                            </div>
+                                            <ul class="cours-search-options">
+                                                <span *ngIf="showError1" class="error-text"><i>Invalid Selection.</i></span>
+                                                <list-item *ngFor="let item of filteredList1;let i = index" [ngClass]="{'selected': i===selectedIndex1}"
+                                                    (click)="selectItem1(i)">{{item}}</list-item>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <label for="">Langue</label>
+                                <div class="all-search-filter" style="position: relative;">
+                                    <div class="cours-search-wrapper">
+                                        <div class="cours-search-select-btn" (click)="listHidden2=!listHidden2; getFilteredList2()"
+                                            (blur)="toggleListDisplay2(0)">
+                                            <span style="color: #6c757d;" *ngIf="!inputItem2">Français</span>
+                                            <span style="color: #6c757d;" *ngIf="inputItem2">{{inputItem2}}</span>
+                                            <i class="uil uil-angle-down"></i>
+                                        </div>
+                                        <div class="cours-search-content" *ngIf="!listHidden2" style="position: absolute;">
+                                            <div class="cours-search">
+                                                <i class="uil uil-search"></i>
+                                                <input spellcheck="false" type="text" placeholder="Search" [(ngModel)]="inputItem2"
+                                                    (ngModelChange)="getFilteredList2()" (keyup)="onKeyPress2($event)" (blur)="toggleListDisplay2(0)"
+                                                    (focus)="toggleListDisplay2(1)" [ngClass]="{'error': showError}">
+                                            </div>
+                                            <ul class="cours-search-options">
+                                                <span *ngIf="showError2" class="error-text"><i>Invalid Selection.</i></span>
+                                                <list-item *ngFor="let item of filteredList2;let i = index"
+                                                    [ngClass]="{'selected': i===selectedIndex2}" (click)="selectItem2(i)">{{item}}</list-item>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                               <input type="checkbox" id="ver">
+                               <label for="ver">Check if this cours is top cours</label>
+                            </li>
+                        </ul>
+                      </div>
+                      <div class="add-cours-container-content-condition" [class]="toggleColor ===2 ?'display-block' : 'display-none'">
+                        <ul id="ulrequirement">
+                            <li>
+                                <label for="">Conditions</label>
+                                <div style="display: flex;justify-content:space-between" id="addinput">
+                                    <input style="width:80%;height:40px" type="text">
+                                    <button style="box-shadow: 0 2px 6px 0 rgb(10 207 151 / 50%);
+                                            padding: 0.28rem 0.8rem;font-size: .875rem;line-height: 1.5;border-radius: 0.15rem;
+                                            color: #fff;background-color: #0acf97;border-color: #0acf97;" (click)="addInputElement()">
+                                        <i class="mdi mdi-plus" style="font-size: 18px;"></i>
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                      </div>
+                      <div class="add-cours-container-content-result" [class]="toggleColor ===3 ?'display-block' : 'display-none'">
+                        <ul id="ulresult">
+                            <li>
+                                <label for="">Resultats</label>
+                                <div style="display: flex;justify-content:space-between">
+                                    <input style="width:80%;height:40px" type="text">
+                                    <button style="box-shadow: 0 2px 6px 0 rgb(10 207 151 / 50%);
+                                                                    padding: 0.28rem 0.8rem;font-size: .875rem;line-height: 1.5;border-radius: 0.15rem;
+                                                                    color: #fff;background-color: #0acf97;border-color: #0acf97;"
+                                        (click)="addInputElementResult()">
+                                        <i class="mdi mdi-plus" style="font-size: 18px;"></i>
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                      </div>
+                      <div class="add-cours-container-content-tarif" [class]="toggleColor ===4 ?'display-block' : 'display-none'">
+                        <ul>
+                            <li>
+                                <input type="checkbox" id="isfree" [(ngModel)]="isFree" style="cursor:pointer;">
+                                <label for="isfree" style="cursor:pointer;display:inline;margin-left:8px">Cocher si le cours est gratuit</label>
+                            </li>
+                            <li>
+                                <label for="price">Prix du cours (€)</label>
+                                <input type="number" [(ngModel)]="price" (ngModelChange)="pReduction()" [disabled]="isFree==true" id="price" min="1" style="width:100%;height:40px">
+                            </li>
+                            <li>
+                                <input type="checkbox" id="isdiscounted" [(ngModel)]="isDiscounted" style="cursor:pointer;">
+                                <label for="isdiscounted" style="cursor:pointer;display:inline;margin-left:8px">Cocher si le cours à une remise</label>
+                            </li>
+                            <li>
+                                <label for="minusprice">Prix réduit (€)</label>
+                                <input type="number" [(ngModel)]="minusPrice" (ngModelChange)="pReduction()" [disabled]="isDiscounted==false" id="minusprice"  min="1" style="width:100%;height:40px">
+                                <p>Ce cours à <span>{{reduction}},00%</span> de réduction</p>
+                            </li>
+                        </ul>
+                      </div>
+                      <div class="add-cours-container-content-media" [class]="toggleColor ===5 ?'display-block' : 'display-none'">
+                        <ul>
+                            <li>
+                                <label for="">Fournisseur d'aperçu du cours</label>
+                                <select name="" id="" style="width:100%;height:40px;cursor:pointer">
+                                    <option value="youtube" style="padding:10px">Youtube</option>
+                                    <option value="vimeo" style="padding:10px">Vimeo</option>
+                                </select>
+                            </li>
+                            <li>
+                                <label for="">URL de présentation du cours</label>
+                                <input type="text" style="width:100%;height:40px" placeholder="Par exemple https://www.youtube.com/watch?v=LrCSO7652es&list">
+                            </li>
+                            <li>
+                                <label for="">Image du cours</label>
+                                <div class="uploadimg">
+                                    <img src="../../../assets/course.png" alt="" style="height: 200px;width:250px">
+                                    <div style="margin-top:10px;">
+                                        <i class="mdi mdi-camera mr-1"></i>
+                                        <label for="imagefile" style="cursor: pointer;margin-left:10px;display:inline;font-size:16px;font-weight:500">Image du cours</label>
+                                        <input style="display:none" type="file" name="" id="imagefile">
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                      </div>
+                      <div class="add-cours-container-content-finir" [class]="toggleColor ===6 ?'display-block' : 'display-none'">
+                        <ul style="text-align: center;">
+                            <li><i class="mdi mdi-check-all" style="font-size: 30px;"></i></li>
+                            <li>
+                                <h3>Merci !</h3>
+                                <span style="color: #6c757d;">Vous n'êtes qu'à un click</span>
+                            </li>
+                            <li>
+                                <button class="subbutton" type="submit">Soumettre</button>
+                            </li>
+                        </ul>
+                      </div>
+                </div>
+                <div class="add-cours-container-footer">
+                    <button (click)="prev()">
+                        <i class="mdi mdi-arrow-left-bold"></i>
+                    </button>
+                    <button (click)="next()">
+                        <i class="mdi mdi-arrow-right-bold"></i>
+                    </button>
+                </div>
+            </div>
+         </div>
+    </div>
+</section>

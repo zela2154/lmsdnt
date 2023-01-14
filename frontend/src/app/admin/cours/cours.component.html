@@ -1,0 +1,233 @@
+<section style="background-color: #fafbfe; height: 0vmax; padding-bottom: 20px;">
+    <app-head></app-head>
+    <section>
+        <div class="dashbord-content">
+            <app-sidebar></app-sidebar>
+            <div class="dashbord-content-1">
+                <div class="dashbord-content-head">
+                    <div>
+                        <i class="mdi mdi-apple-keyboard-command title_icon"></i>
+                        <span>Cours</span>
+                    </div>
+                    <div>
+                        <a style="cursor: pointer;" (click)="gotoAddCourse()" class="dashbord-content-head-btn">+ Ajouter un nouveau cours</a>
+                    </div>
+                </div>
+                <section class="admin-head-content">
+                    <ul>
+                        <li>
+                            <i class="dripicons-link text-muted" style="font-size: 24px;"></i>
+                            <span>7</span>
+                            <span>Cours Actifs</span>
+                        </li>
+                        <li>
+                            <i class="dripicons-link-broken text-muted" style="font-size: 24px;"></i>
+                            <span>3</span>
+                            <span>Cours en attente</span>
+                        </li>
+                        <li>
+                            <i class="dripicons-star text-muted" style="font-size: 24px;"></i>
+                            <span>20</span>
+                            <span>Cours gratuits</span>
+                        </li>
+                        <li>
+                            <i class="dripicons-tags text-muted" style="font-size: 24px;"></i>
+                            <span>20</span>
+                            <span>Cours payants</span>
+                        </li>
+                    </ul>
+                </section>
+                <div class="cours-content">
+                    <section class="cours-search-bar">
+                        <div>
+                           <h6>LISTE DES COURS</h6>
+                        </div>
+                        <div class="search-bar-bar">
+                           <ul class="search-bar-bar1">
+                            <li class="all-search-filter" style="position: relative;">
+                                <span>Catégories</span>
+                                <div class="cours-search-wrapper">
+                                    <div  class="cours-search-select-btn" (click)="listHidden=!listHidden; getFilteredList()" 
+                                    (blur)="toggleListDisplay(0)">
+                                        <span *ngIf="!inputItem">Tout</span>
+                                        <span *ngIf="inputItem">{{inputItem}}</span>
+                                        <i class="uil uil-angle-down"></i>
+                                    </div>
+                                    <div class="cours-search-content" *ngIf="!listHidden" style="position: absolute;">
+                                        <div class="cours-search">
+                                            <i class="uil uil-search"></i>
+                                            <input spellcheck="false" type="text" placeholder="Search"
+                                            [(ngModel)]="inputItem" (ngModelChange)="getFilteredList()" (keyup)="onKeyPress($event)"
+                                            (blur)="toggleListDisplay(0)" (focus)="toggleListDisplay(1)"
+                                            [ngClass]="{'error': showError}">
+                                        </div>
+                                        <ul class="cours-search-options" >
+                                            <span *ngIf="showError" class="error-text"><i>Invalid Selection.</i></span>
+                                            <list-item *ngFor="let item of filteredList;let i = index" 
+                                            [ngClass]="{'selected': i===selectedIndex}"
+                                            (click)="selectItem(i)">{{item}}</list-item>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="all-search-filter" style="position: relative;">
+                                <span>Statut</span>
+                                <div class="cours-search-wrapper">
+                                    <div class="cours-search-select-btn" (click)="listHidden1=!listHidden1; getFilteredList1()"
+                                        (blur)="toggleListDisplay1(0)">
+                                        <span *ngIf="!inputItem1">Tout</span>
+                                        <span *ngIf="inputItem1">{{inputItem1}}</span>
+                                        <i class="uil uil-angle-down"></i>
+                                    </div>
+                                    <div class="cours-search-content" *ngIf="!listHidden1" style="position: absolute;">
+                                        <div class="cours-search">
+                                            <i class="uil uil-search"></i>
+                                            <input spellcheck="false" type="text" placeholder="Search" [(ngModel)]="inputItem1"
+                                                (ngModelChange)="getFilteredList1()" (keyup)="onKeyPress1($event)" (blur)="toggleListDisplay1(0)"
+                                                (focus)="toggleListDisplay1(1)" [ngClass]="{'error': showError1}">
+                                        </div>
+                                        <ul class="cours-search-options">
+                                            <span *ngIf="showError1" class="error-text"><i>Invalid Selection.</i></span>
+                                            <list-item *ngFor="let item of filteredList1;let i = index" [ngClass]="{'selected': i===selectedIndex1}"
+                                                (click)="selectItem1(i)">{{item}}</list-item>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="all-search-filter" style="position: relative;">
+                                <span>Instructeur</span>
+                                <div class="cours-search-wrapper">
+                                    <div class="cours-search-select-btn" (click)="listHidden2=!listHidden2; getFilteredList2()"
+                                        (blur)="toggleListDisplay2(0)">
+                                        <span *ngIf="!inputItem2">Tout</span>
+                                        <span *ngIf="inputItem2">{{inputItem2}}</span>
+                                        <i class="uil uil-angle-down"></i>
+                                    </div>
+                                    <div class="cours-search-content" *ngIf="!listHidden2" style="position: absolute;">
+                                        <div class="cours-search">
+                                            <i class="uil uil-search"></i>
+                                            <input spellcheck="false" type="text" placeholder="Search" [(ngModel)]="inputItem2"
+                                                (ngModelChange)="getFilteredList2()" (keyup)="onKeyPress2($event)" (blur)="toggleListDisplay2(0)"
+                                                (focus)="toggleListDisplay2(1)" [ngClass]="{'error': showError}">
+                                        </div>
+                                        <ul class="cours-search-options">
+                                            <span *ngIf="showError2" class="error-text"><i>Invalid Selection.</i></span>
+                                            <list-item *ngFor="let item of filteredList2;let i = index" [ngClass]="{'selected': i===selectedIndex2}"
+                                                (click)="selectItem2(i)">{{item}}</list-item>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="all-search-filter" style="position: relative;">
+                                <span>Prix</span>
+                                <div class="cours-search-wrapper">
+                                    <div class="cours-search-select-btn" (click)="listHidden3=!listHidden3; getFilteredList3()"
+                                        (blur)="toggleListDisplay3(0)">
+                                        <span *ngIf="!inputItem3">Tout</span>
+                                        <span *ngIf="inputItem3">{{inputItem3}}</span>
+                                        <i class="uil uil-angle-down"></i>
+                                    </div>
+                                    <div class="cours-search-content" *ngIf="!listHidden3" style="position: absolute;">
+                                        <div class="cours-search">
+                                            <i class="uil uil-search"></i>
+                                            <input spellcheck="false" type="text" placeholder="Search" [(ngModel)]="inputItem3"
+                                                (ngModelChange)="getFilteredList3()" (keyup)="onKeyPress3($event)" (blur)="toggleListDisplay3(0)"
+                                                (focus)="toggleListDisplay3(1)" [ngClass]="{'error': showError3}">
+                                        </div>
+                                        <ul class="cours-search-options">
+                                            <span *ngIf="showError3" class="error-text"><i>Invalid Selection.</i></span>
+                                            <list-item *ngFor="let item of filteredList3;let i = index" [ngClass]="{'selected': i===selectedIndex3}"
+                                                (click)="selectItem3(i)">{{item}}</list-item>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                           </ul>
+                            <div>
+                                <button style="width: 200px; color:#fafbfe;background-color:blue;
+                                font-weight:bold;outline:none;border-radius:5px;border:1px solid blue;
+                                height: 40px;">Filtrer</button>
+                            </div>
+                        </div>
+                        <div class="search-bar-bar1">
+                            <div class="search-bar-bar11">
+                             <span>Show</span>
+                             <select name="" id="">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                             </select>
+                             <span>entries</span>
+                            </div>
+                            <div class="search-bar-bar12">
+                              <span>Search : </span>
+                              <input type="text">
+                            </div>
+                        </div>
+                        <div>
+
+                        </div>
+                    </section>
+                    <section class="cours-content-infos">
+                         <table>
+                            <thead>
+                               <tr>
+                                <th>#</th>
+                                <th>Titre</th>
+                                <th>Catégorie</th>
+                                <th>Leçon et Section</th>
+                                <th>Etudiant Inscrit</th>
+                                <th>Status</th>
+                                <th>Prix</th>
+                                <th>Actions</th>
+                               </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <!--<td>
+                                    <i class="mdi mdi-plus-circle-outline"
+                                        style="color: #4CAF50; font-size: 19px;cursor: pointer;"></i>
+                                    </td>-->
+                                    <td>1</td>
+                                    <td class="cours-head-title">
+                                        <h6>Développement Informatique</h6>
+                                        <p>Instructor: <span>Ousmane Diouf</span></p>
+                                    </td>
+                                    <td><span style="background-color: rgba(49,58,70,.18); padding:0 4px;
+                                    border-radius: 4px;">Informatique</span></td>
+                                    <td class="lessons-sections">
+                                        <span>Total Section: 1</span>
+                                        <span>Total Leçon: 2</span>
+                                    </td>
+                                    <td><span>Inscription Totale: 5</span></td>
+                                    <td>
+                                        <i class="mdi mdi-circle" style="color: #4CAF50; font-size: 19px;" data-toggle="tooltip" data-placement="top" title=""
+                                            data-original-title="Active"></i>
+                                    </td>
+                                    <td><span style="background-color: rgba(49,58,70,.18);padding:0 4px;
+                                    border-radius: 4px;">150€</span></td>
+                                    <td class="cours-actions">
+                                        <button>
+                                            <i class="mdi mdi-dots-vertical"></i>
+                                        </button>
+                                        <ul>
+                                            <li>Afficher le cours</li>
+                                            <li>Modifier ce cours</li>
+                                            <li>Section et leçon</li>
+                                            <li>Marquer comme actif</li>
+                                            <li>Supprimer</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                         </table>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</section>
+

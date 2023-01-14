@@ -1,0 +1,65 @@
+<div class="modal-header">
+    <h6 class="modal-title" id="exampleModalLabel">Ajouter une nouvelle leçon</h6>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modalRef.close()"></button>
+</div>
+<div class="modal-body">
+
+    <div class="form-group">
+        <label for="lesson-name" class="col-form-label">Titre</label>
+        <input type="text" class="form-control" id="lesson-name">
+    </div>
+    <div class="form-group">
+        <label for="section-name" class="col-form-label">Section</label>
+        <select class="form-select" aria-label="Default select example" style="cursor: pointer;">
+            <option selected>Choisissez une section</option>
+            <option value="php">PHP</option>
+            <option value="bdd">BDD</option>
+            <option value="merise">MERISE</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="type-name" class="col-form-label">Type de leçon</label>
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="selectValue" style="cursor: pointer;">
+            <option selected>Choisissez un type de leçon</option>
+            <option value="video">Video</option>
+            <option value="fichier">Fichier PDF</option>
+            <option value="fichier">Fichier Texte</option>
+            <option value="fichier">Fichier Document</option>
+            <option value="fichier">Fichier image</option>
+        </select>
+    </div>
+    <div class="form-group" [ngClass]="selectValue==='video'?'display-block' : 'display-none'">
+        <label for="url-name" class="col-form-label">Prestataire du cours</label>
+        <select class="form-select" [(ngModel)]="selectVideo" aria-label="Default select example" style="cursor: pointer;">
+            <option selected>Sélectionner le fournisseur du cours</option>
+            <option value="youtube">Youtube</option>
+            <option value="vimeo">Viméo</option>
+        </select>
+    </div>
+    <div class="form-group" [ngClass]="selectVideo==='youtube'&&selectValue==='video'?'display-block' : 'display-none'">
+        <label for="youtube-name" class="col-form-label">URL de la vidéo</label>
+        <input type="text" class="form-control" id="youtube-name">
+    </div>
+    <div class="form-group" [ngClass]="selectVideo==='youtube'&&selectValue==='video'?'display-block' : 'display-none'">
+        <label for="video-name" class="col-form-label">Durée</label>
+        <input type="text" class="form-control" id="video-name">
+    </div>
+    <div class="form-group" [ngClass]="selectVideo==='vimeo'&&selectValue==='video'?'display-block' : 'display-none'">
+        <label for="vimeo-name" class="col-form-label">URL de la vidéo</label>
+        <input type="text" class="form-control" id="vimeo-name">
+    </div>
+    <div class="form-group" [ngClass]="selectVideo==='vimeo'&&selectValue==='video'?'display-block' : 'display-none'">
+        <label for="vimeo1-name" class="col-form-label">Durée</label>
+        <input type="text" class="form-control" id="vimeo1-name">
+    </div>
+    <div class="form-group" [ngClass]="selectValue==='fichier'?'display-block' : 'display-none'">
+        <label for="inputGroupFile01" class="col-form-label">Attachement</label>
+        <input type="file" class="form-control"  id="inputGroupFile01" />
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+        Close
+    </button>
+    <button type="button" class="btn btn-success">Ajouter une leçon</button>
+</div>

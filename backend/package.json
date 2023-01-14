@@ -1,0 +1,41 @@
+{
+  "name": "express-api-rest",
+  "version": "1.0.0",
+  "description": "express-api-rest",
+  "main": "./src/app.js",
+  "scripts": {
+    "start": "NODE_ENV=production DEBUG=info,warn,error node ./src/app.js",
+    "dev": "NODE_ENV=development   DEBUG=* npx nodemon ./src/app.js -L --inspect=0.0.0.0 ./src",
+    "test": "npx mocha ./test/**/*.test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "yarn": "1.22.19"
+  },
+  "dependencies": {
+    "axios": "^1.2.2",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.19.0",
+    "chai-http": "^4.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.2",
+    "google-auth-library": "^8.7.0",
+    "jsonwebtoken": "^8.5.1",
+    "mariadb": "^2.5.6",
+    "mocha": "^10.2.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "node-fetch": "^3.3.0",
+    "node_env": "^0.0.3",
+    "nodemon": "^2.0.20",
+    "passport-google-oauth20": "^2.0.0",
+    "sequelize": "^6.3.5",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "unit.js": "^2.1.1"
+  }
+}

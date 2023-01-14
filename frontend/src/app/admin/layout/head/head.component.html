@@ -1,0 +1,35 @@
+<section>
+    <div class="lms-admin-head">
+        <div class="lms-admin-head-1">
+            <a style="cursor: pointer; color: blue;" (click)="gotoDashbord()"><h3>DNT</h3></a>
+            <h5>Système de gestion de l'apprentissage en ligne</h5>
+            <a style="cursor: pointer;" [routerLink]="['/']">Visitez le site web</a>
+        </div>
+        <div class="lms-admin-head-2">
+        <ul>
+            <li class="lms-admin-head-2-1" (click)="userSubMenuActive=!userSubMenuActive" style="cursor: pointer;">
+                <img src="../../../../assets/profile.jpg" alt="">
+                <div>
+                    <span>Ousmane Diouf</span>
+                    <span>Administrateur</span>
+                </div>
+            </li>
+            <li class="lms-admin-head-2-2" *ngIf="userSubMenuActive">
+               <a href="">
+                <i class="fa-solid fa-circle-user"></i>
+                <span>Mon compte</span>
+               </a>
+               <a href="">
+                <i class="fa-solid fa-gear"></i>
+                <span>Réglages</span>
+               </a>
+               <a style="cursor: pointer;" (click)="logout()">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Se déconnecter</span>
+               </a>
+            </li>
+        </ul>
+        </div>
+    </div>
+
+</section>
