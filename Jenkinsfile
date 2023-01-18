@@ -6,6 +6,7 @@ pipeline {
       agent {
         docker {
           image 'node:18.12.1'
+          args '-v /var/run/docker.sock:/var/run/docker.sock'
         }
       }
       steps {
@@ -17,6 +18,7 @@ pipeline {
       agent {
         docker {
           image 'node:18.12.1'
+          args '-v /var/run/docker.sock:/var/run/docker.sock'
         }
       }
       steps {
@@ -28,6 +30,7 @@ pipeline {
       agent {
         docker {
           image 'node:18.12.1'
+          args '-v /var/run/docker.sock:/var/run/docker.sock'
         }
       }
       steps {
@@ -39,6 +42,7 @@ pipeline {
       agent {
         docker {
           image 'node:18.12.1'
+          args '-v /var/run/docker.sock:/var/run/docker.sock'
         }
       }
       steps {
@@ -47,7 +51,12 @@ pipeline {
     }
 
     stage('Docker Build') {
-      agent any
+      agent {
+        docker {
+          image 'node:18.12.1'
+          args '-v /var/run/docker.sock:/var/run/docker.sock'
+        }
+      }
       steps {
         sh 'docker build -t my-app:latest .'
       }
