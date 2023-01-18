@@ -65,20 +65,20 @@ services:
       - "3008:3008"
     
 
-  jenkins:
-    image: jenkins/jenkins:lts
+  #jenkins:
+   # image: jenkins/jenkins:lts
     #image: jenkinsci/blueocean
-    ports:
-    - "8080:8080"
-    - "50000:50000"
-    volumes:
-    - jenkins_data:/var/jenkins_home
-    - /var/run/docker.sock:/var/run/docker.sock
-    - v $(which docker):/usr/bin/docker
-    - v /home/jenkins_home:/var/jenkins_home
-    environment:
-    - JENKINS_OPTS=-Djenkins.install.runSetupWizard=false
-    restart: on-failure
+   # ports:
+   # - "8080:8080"
+   # - "50000:50000"
+   # volumes:
+   # - jenkins_data:/var/jenkins_home
+   # - /var/run/docker.sock:/var/run/docker.sock
+   # - v $(which docker):/usr/bin/docker
+   # - v /home/jenkins_home:/var/jenkins_home
+   # environment:
+   # - JENKINS_OPTS=-Djenkins.install.runSetupWizard=false
+   # restart: on-failure
     #build:
     #  context: .
     #  dockerfile: Dockerfile
@@ -87,8 +87,8 @@ services:
     #  context: .
     #  dockerfile: Dockerfile
     #command: ["--group-add", "docker"]
-volumes:
-  jenkins_data:
+#volumes:
+ # jenkins_data:
 
   #echo-server:
   #  image: ealen/echo-server:latest
