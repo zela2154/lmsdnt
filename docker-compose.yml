@@ -77,7 +77,7 @@ services:
     - v $(which docker):/usr/bin/docker
     - v /home/jenkins_home:/var/jenkins_home
     environment:
-    - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+    - JENKINS_OPTS=-Djenkins.install.runSetupWizard=false
     restart: on-failure
     #build:
     #  context: .
