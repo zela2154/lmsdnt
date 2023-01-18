@@ -5,7 +5,7 @@ pipeline {
     stage('Backend: yarn install') {
       agent {
         docker {
-          image 'node:14'
+          image 'node:18.12.1'
         }
       }
       steps {
@@ -16,7 +16,7 @@ pipeline {
     stage('Backend: yarn test') {
       agent {
         docker {
-          image 'node:14'
+          image 'node:18.12.1'
         }
       }
       steps {
@@ -27,7 +27,7 @@ pipeline {
     stage('Frontend: npm install') {
       agent {
         docker {
-          image 'node:14'
+          image 'node:18.12.1'
         }
       }
       steps {
@@ -38,7 +38,7 @@ pipeline {
     stage('Frontend: npm test') {
       agent {
         docker {
-          image 'node:14'
+          image 'node:18.12.1'
         }
       }
       steps {
