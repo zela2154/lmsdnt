@@ -1,38 +1,56 @@
 pipeline {
-  agent any
+  agent none
+
   stages {
-    stage("verify tooling") {
+    stage('Backend: yarn install') {
+      agent {
+        docker {
+          image 'node:14'
+        }
+      }
       steps {
-        sh '''
-          docker version
-          docker info
-          docker compose version 
-          curl --version
-          jq --version
-        '''
+        sh 'cd backend && yarn install'
       }
     }
-    stage('Prune Docker data') {
+
+    stage('Backend: yarn test') {
+      agent {
+        docker {
+          image 'node:14'
+        }
+      }
       steps {
-        sh 'docker system prune -a --volumes -f'
+        sh 'cd backend && yarn test'
       }
     }
-    stage('Start container') {
+
+    stage('Frontend: npm install') {
+      agent {
+        docker {
+          image 'node:14'
+        }
+      }
       steps {
-        sh 'docker compose up -d --no-color --wait'
-        sh 'docker compose ps'
+        sh 'cd frontend && npm install'
       }
     }
-    stage('Run tests against the container') {
+
+    stage('Frontend: npm test') {
+      agent {
+        docker {
+          image 'node:14'
+        }
+      }
       steps {
-        sh 'curl http://localhost:3000/param?query=demo | jq'
+        sh 'cd frontend && npm test'
       }
     }
-  }
-  post {
-    always {
-      sh 'docker compose down --remove-orphans -v'
-      sh 'docker compose ps'
+
+    stage('Docker Build') {
+      agent any
+      steps {
+        sh 'docker build -t my-app:latest .'
+      }
     }
   }
 }
